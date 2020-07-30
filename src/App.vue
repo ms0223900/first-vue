@@ -6,6 +6,8 @@
       v-for="singleTodoData in todoList"
       :key="singleTodoData.id"
       :todo='singleTodoData'
+      :clicked="clicked"
+      :onAddClick="handleAddClick"
       :onCheck='handleCheck'
     />
   </div>
@@ -21,18 +23,27 @@ export default {
   data() {
     return {
       todoList,
+      clicked: 0,
     };
   },
   methods: {
     handleCheck(id) {
-      const matchedIndex = this.todoList.findIndex((t) => t.id === id);
-      if (matchedIndex !== -1) {
-        this.todoList[matchedIndex] = {
-          ...this.todoList[matchedIndex],
-          checked: !this.todoList[matchedIndex].checked,
-        };
-      }
-      console.log(this.todoList, id);
+      console.log(id);
+      return () => {
+        // console.log(id, e.target);
+        const matchedIndex = this.todoList.findIndex((t) => t.id === id);
+        if (matchedIndex !== -1) {
+          this.todoList[matchedIndex] = {
+            ...this.todoList[matchedIndex],
+            checked: !this.todoList[matchedIndex].checked,
+          };
+        }
+        console.log(this.todoList, id);
+      };
+    },
+    handleAddClick() {
+      // window.alert('add');
+      this.clicked += 1;
     },
   },
   components: {
