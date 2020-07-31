@@ -16,8 +16,10 @@
 
 <script>
 export default {
+  name: 'TodoItem',
   props: {
     todo: {
+      type: String,
       id: String || Number,
       content: String,
       checked: Boolean,
@@ -41,6 +43,11 @@ export default {
   },
   mounted() {
     // console.log(this.todo);
+  },
+  render() {
+    return (
+      <div></div>
+    );
   },
 };
 </script>

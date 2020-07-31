@@ -10,12 +10,18 @@
       :onAddClick="handleAddClick"
       :onCheck='handleCheck'
     />
+    <ButtonWrapper>
+      <template v-slot:button-text>
+        <h2>Button :)</h2>
+      </template>
+    </ButtonWrapper>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
 import TodoItem from './components/TodoItem.vue';
+import ButtonWrapper from './components/ButtonWrapper.vue';
 import { todoList } from './static/todo-mocks.ts';
 
 export default {
@@ -49,6 +55,7 @@ export default {
   components: {
     HelloWorld,
     TodoItem,
+    ButtonWrapper,
   },
 };
 </script>
