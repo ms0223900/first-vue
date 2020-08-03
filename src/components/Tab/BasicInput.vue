@@ -1,19 +1,23 @@
 <template>
-  <input
-    type="number"
-    :placeholder="placeholder"
-    :value.sync="inputValue"
-    @change="onChange"
-  />
+  <div>
+    <input
+      type="number"
+      :placeholder="placeholder"
+      :value="inputValue"
+      @input="$emit('input', $event.target.value)"
+    />
+    <span>{{ inputValue + ' ' + unit }}</span>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'BasicInput',
   props: {
+    unit: String,
     placeholder: String,
     inputValue: String || Number,
-    onChange: Function,
+    // onChange: Function,
   },
   watch: {
     inputValue(val) {

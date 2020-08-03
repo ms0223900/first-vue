@@ -10,23 +10,21 @@
       :onChangeTab="handleChangeTab"
     />
     <div>
-      <!-- <keep-alive include="BasicInput"> -->
-      <BasicInput
+      <template
         v-for="(input, index) in inputListData"
+      >
+      <BasicInput
         :key="index"
         v-show="stepNow === index"
-        :placeholder="inputListData[index].placeHolder"
+        v-model="inputListData[index].value"
         :inputValue="inputListData[index].value"
-        :onChange="handleChangeInput(index)"
+        :unit="inputListData[index].unit"
+        :placeholder="inputListData[index].placeHolder"
       />
-      <!-- <BasicInput
-      />
-      <BasicInput
-        v-if="stepNow === 1"
-        :placeholder="inputListData[1].placeHolder"
-        :value="inputListData[1].value"
-      /> -->
-      <!-- </keep-alive> -->
+      </template>
+    </div>
+    <div>
+      {{ widthAndHeight }}
     </div>
 
     <ButtonWrapper
@@ -50,8 +48,8 @@ const tabs = [
 ];
 
 const inputListData = [
-  { placeHolder: 'width', value: '0' },
-  { placeHolder: 'height', value: '0' },
+  { placeHolder: 'width', value: '0', unit: 'meter(w)' },
+  { placeHolder: 'height', value: '0', unit: 'meter(h)' },
 ];
 export default {
   name: 'SimpleForm',
@@ -66,6 +64,10 @@ export default {
     checkIsActivated(index, i) {
       return index === i;
     },
+    widthAndHeight() {
+      const str = `width: ${inputListData[0].value}, height: ${inputListData[1].value}`;
+      return str;
+    },
   },
   methods: {
     handleChangeTab(tabIndex) {
@@ -76,8 +78,11 @@ export default {
         this.inputListData[i].value = e.target.value;
       };
     },
+    input(e) {
+      console.log(e);
+    },
     handleSend() {
-      const str = `width: ${inputListData[0].value}, height: ${inputListData[1].value}`;
+      const str = this.widthAndHeight;
       window.alert(str);
     },
   },
