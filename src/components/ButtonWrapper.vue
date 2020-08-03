@@ -1,5 +1,5 @@
 <template>
-  <button class="basic-button">
+  <button class="basic-button" @click="onClick">
     <slot name="button-text"></slot>
   </button>
 </template>
@@ -7,6 +7,9 @@
 <script>
 export default {
   name: 'ButtonWrapper',
+  props: {
+    onClick: Function,
+  },
 };
 </script>
 

@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
     <TodoItem
       v-for="singleTodoData in todoList"
       :key="singleTodoData.id"
@@ -10,19 +8,14 @@
       :onAddClick="handleAddClick"
       :onCheck='handleCheck'
     />
-    <ButtonWrapper>
-      <template v-slot:button-text>
-        <h2>Button :)</h2>
-      </template>
-    </ButtonWrapper>
+    <SimpleForm />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-import TodoItem from './components/TodoItem.vue';
-import ButtonWrapper from './components/ButtonWrapper.vue';
 import { todoList } from './static/todo-mocks.ts';
+import TodoItem from './components/TodoItem.vue';
+import SimpleForm from './components/SimpleForm.vue';
 
 export default {
   name: 'App',
@@ -52,10 +45,12 @@ export default {
       this.clicked += 1;
     },
   },
+  extends: {
+    // SimpleForm,
+  },
   components: {
-    HelloWorld,
     TodoItem,
-    ButtonWrapper,
+    SimpleForm,
   },
 };
 </script>
