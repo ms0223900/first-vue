@@ -9,6 +9,16 @@
       :onCheck='handleCheck'
     />
     <SimpleForm />
+    <PreSample />
+    <hr />
+    <h4>Ref</h4>
+    <CustomCompRef />
+    <hr />
+    <h4>Is</h4>
+    <IsComp />
+    <hr />
+    <h4>Transition</h4>
+    <TransitionComp />
   </div>
 </template>
 
@@ -16,6 +26,10 @@
 import { todoList } from './static/todo-mocks.ts';
 import TodoItem from './components/TodoItem.vue';
 import SimpleForm from './components/SimpleForm.vue';
+import PreSample from './components/PreSample.vue';
+import CustomCompRef from './components/ref-sample/CustomCompRef.vue';
+import IsComp from './components/is-sample/IsComp.vue';
+import TransitionComp from './components/transition/TransitionComp.vue';
 
 export default {
   name: 'App',
@@ -51,6 +65,10 @@ export default {
   components: {
     TodoItem,
     SimpleForm,
+    PreSample,
+    CustomCompRef,
+    IsComp,
+    TransitionComp,
   },
 };
 </script>
