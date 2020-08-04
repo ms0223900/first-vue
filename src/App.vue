@@ -21,6 +21,8 @@
     <TransitionComp />
     <TransitionGroupComp />
     <hr />
+    <h4>Keep Alive</h4>
+    <KeepAliveComp />
   </div>
 </template>
 
@@ -33,6 +35,7 @@ import CustomCompRef from './components/ref-sample/CustomCompRef.vue';
 import IsComp from './components/is-sample/IsComp.vue';
 import TransitionComp from './components/transition/TransitionComp.vue';
 import TransitionGroupComp from './components/transition/TransitionGroupComp.vue';
+import KeepAliveComp from './components/keep-alive-sample/KeepAliveComp.vue';
 
 export default {
   name: 'App',
@@ -73,6 +76,7 @@ export default {
     IsComp,
     TransitionComp,
     TransitionGroupComp,
+    KeepAliveComp,
   },
 };
 </script>
