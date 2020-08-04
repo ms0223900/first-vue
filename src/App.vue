@@ -19,6 +19,8 @@
     <hr />
     <h4>Transition</h4>
     <TransitionComp />
+    <TransitionGroupComp />
+    <hr />
   </div>
 </template>
 
@@ -30,6 +32,7 @@ import PreSample from './components/PreSample.vue';
 import CustomCompRef from './components/ref-sample/CustomCompRef.vue';
 import IsComp from './components/is-sample/IsComp.vue';
 import TransitionComp from './components/transition/TransitionComp.vue';
+import TransitionGroupComp from './components/transition/TransitionGroupComp.vue';
 
 export default {
   name: 'App',
@@ -69,6 +72,7 @@ export default {
     CustomCompRef,
     IsComp,
     TransitionComp,
+    TransitionGroupComp,
   },
 };
 </script>
