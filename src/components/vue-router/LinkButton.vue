@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{ name: `${linkToName}`, }">
+  <router-link :to="linkTo">
     <button :class="['btn', { active: active}]">
       <h4>{{ btnText }}</h4>
     </button>
@@ -13,10 +13,20 @@ export default {
     active() {
       return this.$route.name === this.linkToName;
     },
+    linkTo() {
+      return ({
+        name: this.linkToName,
+        params: this.params,
+      });
+    },
   },
   props: {
     btnText: String,
     linkToName: String,
+    params: Object,
+  },
+  mounted() {
+    // console.log(this.params);
   },
 };
 </script>

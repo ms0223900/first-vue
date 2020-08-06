@@ -3,6 +3,8 @@ import OriginVue from 'vue';
 import Vue from 'vue/dist/vue.esm';
 import VueRouter from 'vue-router';
 import RouterPageVue from './RouterPage.vue';
+// import UserPageVue from './UserPage.vue';
+import NotFoundPageVue from './NotFoundPage.vue';
 
 const Intro = Vue.component('Intro', {
   template: '<div>Hi, Here is Intro</div>',
@@ -18,15 +20,26 @@ const CompInsideView = Vue.component('CompInsideView', {
   template: '<div style="background-color: #aaa;">Hi, CompInsideView Here</div>',
 });
 
+const UserPageVue = () => import('./UserPage.vue');
+
 OriginVue.use(VueRouter);
 
 const router = new VueRouter({
   // mode: 'history',
   routes: [
     {
+      path: '*',
+      component: NotFoundPageVue,
+    },
+    {
       path: '/',
       name: 'home',
       component: RouterPageVue,
+    },
+    {
+      path: '/user/:userId',
+      name: 'user',
+      component: UserPageVue,
     },
     {
       path: '/v-router',
