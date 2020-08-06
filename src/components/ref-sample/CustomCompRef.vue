@@ -4,6 +4,9 @@
       ref="customComp"
     />
     <div style="padding: 10px;"></div>
+    <div>
+      {{ `component data: ${jsonedCustomCompData}` }}
+    </div>
     <button @click="getCustomCompRef">
       {{ "click to see custom component ref" }}
     </button>
@@ -14,9 +17,20 @@
 import DomRefComp from './DomRefComp.vue';
 
 export default {
+  computed: {
+    jsonedCustomCompData() {
+      return JSON.stringify(this.customCompData);
+    },
+  },
+  data() {
+    return ({
+      customCompData: undefined,
+    });
+  },
   methods: {
     getCustomCompRef() {
-      console.log(this.$refs.customComp.$data);
+      const customCompData = this.$refs.customComp.$data;
+      this.customCompData = customCompData;
     },
   },
   components: {
