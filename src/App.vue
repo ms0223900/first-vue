@@ -27,6 +27,8 @@
     <hr />
     <h4>Keep Alive</h4>
     <KeepAliveComp />
+    <hr />
+    <RouterPage />
   </div>
 </template>
 
@@ -41,6 +43,7 @@ import TransitionComp from './components/transition/TransitionComp.vue';
 import TransitionGroupComp from './components/transition/TransitionGroupComp.vue';
 import KeepAliveComp from './components/keep-alive-sample/KeepAliveComp.vue';
 import ConditionalList from './components/v-for-if-sample/ConditionalList.vue';
+import RouterPage from './components/vue-router/RouterPage.vue';
 
 export default {
   name: 'App',
@@ -83,6 +86,7 @@ export default {
     TransitionGroupComp,
     KeepAliveComp,
     ConditionalList,
+    RouterPage,
   },
 };
 </script>
