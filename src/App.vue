@@ -9,6 +9,10 @@
       :onCheck='handleCheck'
     />
     <SimpleForm />
+    <hr />
+    <h4>v-for</h4>
+    <ConditionalList />
+    <hr />
     <PreSample />
     <hr />
     <h4>Ref</h4>
@@ -36,6 +40,7 @@ import IsComp from './components/is-sample/IsComp.vue';
 import TransitionComp from './components/transition/TransitionComp.vue';
 import TransitionGroupComp from './components/transition/TransitionGroupComp.vue';
 import KeepAliveComp from './components/keep-alive-sample/KeepAliveComp.vue';
+import ConditionalList from './components/v-for-if-sample/ConditionalList.vue';
 
 export default {
   name: 'App',
@@ -77,6 +82,7 @@ export default {
     TransitionComp,
     TransitionGroupComp,
     KeepAliveComp,
+    ConditionalList,
   },
 };
 </script>
