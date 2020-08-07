@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 import RouterPageVue from './RouterPage.vue';
 // import UserPageVue from './UserPage.vue';
 import NotFoundPageVue from './NotFoundPage.vue';
+import UserListVue from './UserList.vue';
 
 const Intro = Vue.component('Intro', {
   template: '<div>Hi, Here is Intro</div>',
@@ -37,12 +38,25 @@ const router = new VueRouter({
       component: RouterPageVue,
     },
     {
-      path: '/user/:userId',
-      name: 'user',
-      component: UserPageVue,
+      path: '/users',
+      name: 'users',
+      component: UserListVue,
+      children: [
+        {
+          path: ':userId',
+          name: 'user',
+          component: UserPageVue,
+        },
+      ],
     },
+    // {
+    //   path: 'user/:userId',
+    //   name: 'user',
+    //   component: UserPageVue,
+    // },
     {
       path: '/v-router',
+      name: 'vRouter',
       component: RouterPageVue,
       children: [
         {

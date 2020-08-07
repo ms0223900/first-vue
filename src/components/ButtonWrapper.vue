@@ -15,7 +15,7 @@ export default {
 
 <style scoped>
 .basic-button {
-  background-color: #ddd;
+  background-color: #bbb;
   border-radius: 10px;
 }
 .basic-button:hover {

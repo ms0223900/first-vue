@@ -15,6 +15,7 @@ export default {
     },
     linkTo() {
       return ({
+        path: this.path,
         name: this.linkToName,
         params: this.params,
       });
@@ -22,6 +23,7 @@ export default {
   },
   props: {
     btnText: String,
+    path: String,
     linkToName: String,
     params: Object,
   },
@@ -37,6 +39,7 @@ button {
   cursor: pointer;
   margin: 6px;
   border-radius: 3px;
+  color: #111;
 }
 .active {
   background-color: #111;
@@ -44,5 +47,6 @@ button {
 }
 button:hover {
   background-color: #ddd;
+  color: #111;
 }
 </style>
