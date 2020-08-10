@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Test V-bind.sync Sample</h2>
-    <TextPopup :title.sync="title" />
+    <TextPopup :title.sync="content.title" />
   </div>
 </template>
 
@@ -14,6 +14,7 @@ const TextPopup = Vue.component('TextPopup', {
   },
   data() {
     return ({
+      titleInChildren: this.title,
       inputVal: '',
     });
   },
@@ -24,7 +25,7 @@ const TextPopup = Vue.component('TextPopup', {
   },
   template: `
     <div>
-      <h3>{{ title }}</h3>
+      <h3>{{ "Title from parent: " + title }}</h3>
       <p>{{ "input value in children: " + inputVal }}</p>
       <input v-model="inputVal" />
       <button @click="handleChangeTitle">Change Parent data.title</button>
@@ -36,9 +37,16 @@ export default {
   name: 'VBindSync',
   data() {
     return ({
-      title: '',
+      content: {
+        title: '',
+      },
     });
   },
+  // methods: {
+  //   update(val) {
+  //     this.content.title = val;
+  //   },
+  // },
   components: {
     TextPopup,
   },
