@@ -1,14 +1,23 @@
 <template>
   <router-link :to="linkTo">
-    <button :class="['btn', { active: active}]">
+    <button :class="['btn', { active: active}]" :style="btnStyle">
       <h4>{{ btnText }}</h4>
     </button>
   </router-link>
 </template>
 
 <script>
+const btnStyle = {
+  minWidth: `${140}px`,
+};
+
 export default {
   name: 'LinkButton',
+  data() {
+    return ({
+      btnStyle,
+    });
+  },
   computed: {
     active() {
       return this.$route.name === this.linkToName;
