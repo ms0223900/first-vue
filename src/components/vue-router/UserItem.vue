@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link :to="path">
+    <router-link :[routerLinkPropName]="path">
       <h3>{{ user.name }}</h3>
     </router-link>
   </div>
@@ -9,6 +9,12 @@
 <script>
 export default {
   name: 'UserItem',
+  data() {
+    return ({
+      // for testing v-bind:[key]
+      routerLinkPropName: 'to',
+    });
+  },
   props: {
     user: {
       id: String || Number,
