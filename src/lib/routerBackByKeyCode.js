@@ -8,7 +8,8 @@ const routerBackByKeyCode = (keyCode = 8) => ({
   },
   methods: {
     handleBack() {
-      this.$router.go(-1);
+      // this.$router.go(-1);
+      this.$router.back();
     },
   },
 });
