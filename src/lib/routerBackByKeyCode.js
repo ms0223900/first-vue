@@ -2,7 +2,7 @@ const routerBackByKeyCode = (keyCode = 8) => ({
   mounted() {
     window.addEventListener('keyup', (e) => {
       if (e.keyCode === keyCode) {
-        this.handleBack();
+        // this.handleBack();
       }
     });
   },
