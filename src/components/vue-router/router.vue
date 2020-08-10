@@ -6,6 +6,7 @@ import RouterPageVue from './RouterPage.vue';
 // import UserPageVue from './UserPage.vue';
 import NotFoundPageVue from './NotFoundPage.vue';
 import UserListVue from './UserList.vue';
+import VBindSyncVue from '../v-bind-sync-sample/VBindSync.vue';
 
 const Intro = Vue.component('Intro', {
   template: '<div>Hi, Here is Intro</div>',
@@ -36,6 +37,11 @@ const router = new VueRouter({
       path: '/',
       name: 'home',
       component: RouterPageVue,
+    },
+    {
+      path: '/v-bind-sync',
+      name: 'v-bind-sync',
+      component: VBindSyncVue,
     },
     {
       path: '/users',
