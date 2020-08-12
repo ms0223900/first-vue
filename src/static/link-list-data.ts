@@ -6,6 +6,7 @@ const linkListData = [
   { path: '/notMatchedPage', btnText: 'notMatchedPage' },
   { linkToName: 'users', btnText: 'Users Page' },
   { linkToName: 'v-bind-sync', btnText: 'v-bind.sync sample' },
+  { linkToName: 'parent-children', btnText: 'parent/children sample' },
 ];
 
 export default linkListData;
