@@ -8,6 +8,7 @@ import NotFoundPageVue from './NotFoundPage.vue';
 import UserListVue from './UserList.vue';
 import VBindSyncVue from '../v-bind-sync-sample/VBindSync.vue';
 import ParentChildrenVue from '../parent-children/ParentChildren.vue';
+import ProviderSample from '../provide-inject/ProviderSample.vue';
 
 const Intro = Vue.component('Intro', {
   template: '<div>Hi, Here is Intro</div>',
@@ -48,6 +49,11 @@ const router = new VueRouter({
       path: '/parent-children',
       name: 'parent-children',
       component: ParentChildrenVue,
+    },
+    {
+      path: '/provide-inject',
+      name: 'provide-inject',
+      component: ProviderSample,
     },
     {
       path: '/users',
