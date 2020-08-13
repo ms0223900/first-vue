@@ -8,6 +8,7 @@ const linkListData = [
   { linkToName: 'v-bind-sync', btnText: 'v-bind.sync sample' },
   { linkToName: 'parent-children', btnText: 'parent/children sample' },
   { linkToName: 'provide-inject', btnText: 'provide/inject sample' },
+  { linkToName: 'slot-props', btnText: 'slot props sample' },
 ];
 
 export default linkListData;

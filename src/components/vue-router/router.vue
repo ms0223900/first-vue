@@ -9,6 +9,7 @@ import UserListVue from './UserList.vue';
 import VBindSyncVue from '../v-bind-sync-sample/VBindSync.vue';
 import ParentChildrenVue from '../parent-children/ParentChildren.vue';
 import ProviderSample from '../provide-inject/ProviderSample.vue';
+import SlotPropsSampleVue from '../slot-sample/SlotPropsSample.vue';
 
 const Intro = Vue.component('Intro', {
   template: '<div>Hi, Here is Intro</div>',
@@ -54,6 +55,11 @@ const router = new VueRouter({
       path: '/provide-inject',
       name: 'provide-inject',
       component: ProviderSample,
+    },
+    {
+      path: '/slot-props',
+      name: 'slot-props',
+      component: SlotPropsSampleVue,
     },
     {
       path: '/users',
