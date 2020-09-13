@@ -9,6 +9,7 @@ const linkListData = [
   { linkToName: 'parent-children', btnText: 'parent/children sample' },
   { linkToName: 'provide-inject', btnText: 'provide/inject sample' },
   { linkToName: 'slot-props', btnText: 'slot props sample' },
+  { linkToName: 'vuexSample', btnText: 'Vuex Shopping Cart' },
 ];
 
 export default linkListData;

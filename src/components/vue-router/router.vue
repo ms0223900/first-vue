@@ -10,6 +10,7 @@ import VBindSyncVue from '../v-bind-sync-sample/VBindSync.vue';
 import ParentChildrenVue from '../parent-children/ParentChildren.vue';
 import ProviderSample from '../provide-inject/ProviderSample.vue';
 import SlotPropsSampleVue from '../slot-sample/SlotPropsSample.vue';
+import VuexSampleVue from '../../vuex/VuexSample.vue';
 
 const Intro = Vue.component('Intro', {
   template: '<div>Hi, Here is Intro</div>',
@@ -102,6 +103,11 @@ const router = new VueRouter({
           },
         },
       ],
+    },
+    {
+      path: '/vuex-sample',
+      name: 'vuexSample',
+      component: VuexSampleVue,
     },
   ],
 });

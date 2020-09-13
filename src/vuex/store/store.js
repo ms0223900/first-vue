@@ -18,14 +18,16 @@ const initProductsState = () => ({
 });
 
 const cart = {
+  namespaced: true,
   state: initCartState,
   actions: cartActions,
   mutations: cartMutations,
   getters: cartGetters,
 };
 const products = {
+  namespaced: true,
   state: initProductsState,
-  actionts: productsActions,
+  actions: productsActions,
   mutations: productsMutations,
   getters: productsGetters,
 };

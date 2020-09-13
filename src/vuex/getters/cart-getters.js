@@ -1,5 +1,5 @@
-const cartProducts = (state, getters, rootState) => state.items.map(({ id, quantity }) => {
-  const product = rootState.products.all.find((p) => p.id === id);
+const cartProducts = (state, getters, rootState) => state.cartItems.map(({ id, quantity }) => {
+  const product = rootState.products.allProducts.find((p) => p.id === id);
   return {
     title: product.title,
     price: product.price,
