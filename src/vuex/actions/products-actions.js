@@ -8,8 +8,8 @@ function getAllProducts({ commit }) {
   });
 }
 
-const actions = {
+const productsActions = {
   [ActionTypes.GET_ALL_PRODUCTS]: getAllProducts,
 };
 
-export default actions;
+export default productsActions;

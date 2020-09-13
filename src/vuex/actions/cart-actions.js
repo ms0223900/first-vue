@@ -41,9 +41,9 @@ function addProductToCart({ commit, state }, { product }) {
   }
 }
 
-const actions = {
+const cartActions = {
   [ActionTypes.CHECKOUT_ORDERS]: checkoutOrders,
   [ActionTypes.ADD_PRODUCT_TO_CART]: addProductToCart,
 };
 
-export default actions;
+export default cartActions;

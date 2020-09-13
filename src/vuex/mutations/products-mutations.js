@@ -1,6 +1,6 @@
 import MutationTypes from '.';
 
-const mutations = {
+const productsMutations = {
   [MutationTypes.SET_PRODUCTS](state, { products }) {
     state.allProducts = products;
   },
@@ -11,4 +11,4 @@ const mutations = {
   },
 };
 
-export default mutations;
+export default productsMutations;

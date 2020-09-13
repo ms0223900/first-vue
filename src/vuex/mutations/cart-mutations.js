@@ -1,6 +1,6 @@
 import MutationTypes from '.';
 
-const mutations = {
+const cartMutations = {
   [MutationTypes.PUSH_PRODUCT_TO_CART](state, { id }) {
     state.cartItems.push({
       id, quantity: 1,
@@ -22,4 +22,4 @@ const mutations = {
   },
 };
 
-export default mutations;
+export default cartMutations;
