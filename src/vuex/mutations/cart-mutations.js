@@ -8,7 +8,7 @@ const cartMutations = {
   },
 
   [MutationTypes.ADD_ITEM_QUANTITY](state, { id }) {
-    const cartItem = state.items.find((item) => item.id === id);
+    const cartItem = state.cartItems.find((item) => item.id === id);
     // eslint-disable-next-line no-plusplus
     cartItem.quantity++;
   },

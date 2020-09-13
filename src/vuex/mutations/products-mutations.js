@@ -3,6 +3,7 @@ import MutationTypes from '.';
 const productsMutations = {
   [MutationTypes.SET_PRODUCTS](state, { products }) {
     state.allProducts = products;
+    console.log(state);
   },
 
   [MutationTypes.DECREMENT_PRODUCTS_INVENTORY](state, { id }) {

@@ -9,9 +9,13 @@ const STATUS = {
 
 function checkoutOrders({ commit, state }, { products }) { // ctx, payload
   const originItems = [...state.cartItems];
-  commit(MutationTypes.SET_CHECKOUT_STATUS, null);
+  commit(MutationTypes.SET_CHECKOUT_STATUS, {
+    status: null,
+  });
   // clear items
-  commit(MutationTypes.SET_CART_ITEMS, []);
+  commit(MutationTypes.SET_CART_ITEMS, {
+    items: [],
+  });
   mockApi.buyProducts(
     products,
     () => commit(MutationTypes.SET_CHECKOUT_STATUS, {
@@ -29,9 +33,11 @@ function checkoutOrders({ commit, state }, { products }) { // ctx, payload
 }
 
 function addProductToCart({ commit, state }, { product }) {
-  commit(MutationTypes.SET_CHECKOUT_STATUS, null); // init
+  commit(MutationTypes.SET_CHECKOUT_STATUS, {
+    status: null,
+  }); // init
   if (product.inventory > 0) {
-    const cartItem = state.items.find((i) => i.id === product.id);
+    const cartItem = state.cartItems.find((i) => i.id === product.id);
     if (!cartItem) {
       commit(MutationTypes.PUSH_PRODUCT_TO_CART, { id: product.id });
     } else {

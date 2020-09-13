@@ -7,7 +7,7 @@
       <br>
       <button
         :disabled="!product.inventory"
-        @click="addProductToCart(product)">
+        @click="addProductToCart({ product })">
         Add to cart
       </button>
     </li>
@@ -20,11 +20,14 @@ import ActionTypes from '../actions';
 
 export default {
   computed: mapState({
-    products: (state) => state.allProducts,
+    products: (state) => {
+      console.log(state);
+      return state.products.allProducts;
+    },
   }),
-  methods: mapActions('cart', [
-    ActionTypes.ADD_PRODUCT_TO_CART,
-  ]),
+  methods: mapActions('cart', {
+    addProductToCart: ActionTypes.ADD_PRODUCT_TO_CART,
+  }),
   created() {
     this.$store.dispatch(`products/${ActionTypes.GET_ALL_PRODUCTS}`);
   },

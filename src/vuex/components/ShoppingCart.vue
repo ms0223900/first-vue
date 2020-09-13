@@ -31,9 +31,7 @@ export default {
   },
   methods: {
     checkout(products) {
-      this.$store.dispatch(`${ActionTypes.CHECKOUT_ORDERS}`, { products }, {
-        root: true,
-      });
+      this.$store.dispatch(`cart/${ActionTypes.CHECKOUT_ORDERS}`, { products });
     },
   },
 };
