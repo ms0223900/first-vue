@@ -47,9 +47,21 @@ function addProductToCart({ commit, state }, { product }) {
   }
 }
 
+function decrementProductInCart({ commit }, { product }) {
+  console.log(product);
+
+  commit(MutationTypes.SET_CHECKOUT_STATUS, {
+    status: null,
+  }); // init
+  commit(MutationTypes.DECREMENT_ITEM_QUANTITY, { id: product.id });
+
+  commit(`products/${MutationTypes.ADD_PRODUCTS_INVENTORY}`, { id: product.id }, { root: true });
+}
+
 const cartActions = {
   [ActionTypes.CHECKOUT_ORDERS]: checkoutOrders,
   [ActionTypes.ADD_PRODUCT_TO_CART]: addProductToCart,
+  [ActionTypes.DECREMENT_PRODUCT_IN_CART]: decrementProductInCart,
 };
 
 export default cartActions;

@@ -1,6 +1,7 @@
 const cartProducts = (state, getters, rootState) => state.cartItems.map(({ id, quantity }) => {
   const product = rootState.products.allProducts.find((p) => p.id === id);
   return {
+    id,
     title: product.title,
     price: product.price,
     quantity,

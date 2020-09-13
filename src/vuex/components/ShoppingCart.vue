@@ -5,8 +5,10 @@
     <ul>
       <li
         v-for="product in products"
-        :key="product.id">
+        :key="product.id"
+      >
         {{ product.title }} - {{ product.price | currency }} x {{ product.quantity }}
+        <button @click="decrementCartItem(product)">-1</button>
       </li>
     </ul>
     <p>Total: {{ total | currency }}</p>
@@ -32,6 +34,9 @@ export default {
   methods: {
     checkout(products) {
       this.$store.dispatch(`cart/${ActionTypes.CHECKOUT_ORDERS}`, { products });
+    },
+    decrementCartItem(product) {
+      this.$store.dispatch(`cart/${ActionTypes.DECREMENT_PRODUCT_IN_CART}`, { product });
     },
   },
 };
